@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 void fechaSalida(char *fecha);
+int * direccion(int *arreglo);
 
 int main(){
     char *fecha="2017-06-06";
-
     fechaSalida(fecha);
-    return 0;
+    int a[5];
+    int *d=direccion(a);
+    printf("Direccion de memoria del arreglo: %p\n",d);
 }
 
 
@@ -38,3 +40,9 @@ void fechaSalida(char *fecha){
     printf("el mes es: %s\n",tmp);
 }
 
+int * direccion(int *arreglo)
+{
+    int *dir;
+    dir=&arreglo[0];
+    return dir;
+}
