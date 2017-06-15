@@ -3,13 +3,18 @@
 #include <string.h>
 void fechaSalida(char *fecha);
 int * direccion(int *arreglo);
+void swap(int* a, int* b);
 
 int main(){
     char *fecha="2017-06-06";
     fechaSalida(fecha);
-    int a[5];
-    int *d=direccion(a);
+    int c[5];
+    int *d=direccion(c);
     printf("Direccion de memoria del arreglo: %p\n",d);
+    int a=3;
+    int b=2;
+    printf("Los numeros coriginales son: a=%d y b=%d\n",a,b);
+    swap(&a, &b);
 }
 
 
@@ -45,4 +50,13 @@ int * direccion(int *arreglo)
     int *dir;
     dir=&arreglo[0];
     return dir;
+}
+
+void swap(int* a, int* b)
+{
+int* temp;
+temp=a;
+a = b;
+b = temp;
+printf("Los numeros cambiados son: a=%d y b=%d\n",*a,*b);
 }
