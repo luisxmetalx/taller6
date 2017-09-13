@@ -54,9 +54,9 @@ int * direccion(int *arreglo)
 
 void swap(int* a, int* b)
 {
-int* temp;
-temp=a;
-a = b;
-b = temp;
+	int* temp=malloc(sizeof(int *));
+	*temp=*a; 
+	*a = *b;
+	*b = *temp;
 printf("Los numeros cambiados son: a=%d y b=%d\n",*a,*b);
 }
